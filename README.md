@@ -15,12 +15,21 @@ Maya is an intelligent assistant designed to turn sheet music images into playab
 * **Human-in-the-loop:** Easily update or correct specific notes via natural language.
 
 ## 🛠️ Tech Stack
-
+* **Orchestration**: LangGraph (Cyclic Graph state management)
+* **Framework**: LangChain (LLM abstractions & Tool calling)
+* **Vision/LLM**: Claude 3.5 Sonnet (via Anthropic)
+* **OMR**: Oemer (Tier 1 Transcription)
 * **Core:** Python 3.13
 * **Orchestration:** [LangGraph](https://github.com/langchain-ai/langgraph) (for the state-based agent logic)
 * **LLM:** Claude 3.5 / 3.7 (via LangChain)
 * **OMR Engine:** `oemer`
 * **Audio/Visual:** `pygame`, `fluidsynth`, and custom `music_helper` utilities.
+
+## 🧠 Agent Logic
+* Maya uses a LangGraph-driven state machine to decide the best path for your music
+* OMR Node: Attempts deep structural analysis of the sheet music.
+* Vision Fallback Node: If OMR fails, the agent uses Claude 3.5 Sonnet's vision capabilities to describe and transcribe the score.
+* Synthesis Node: Converts the identified notes into MIDI, MP3, and MusicXML.
 
 ## 🚀 Quick Start
 
