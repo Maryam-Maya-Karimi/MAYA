@@ -4,7 +4,26 @@ The Agentic Music Transcriber
 
 Maya is an intelligent assistant designed to turn sheet music images into playable MusicXML files. It doesn't just "run code"; it uses a **tiered reasoning approach** to ensure you get a transcription even when standard OMR (Optical Music Recognition) fails.
 
-![Maya Agent Graph](agent_graph.png)
+```mermaid
+graph TD
+    Start((Start)) --> User[User Input]
+    User --> Model{Model Response}
+    
+    %% Main interaction loop
+    Model -.->|Response| User
+    User -->|'quit'| End((End))
+
+    Model{Model Response} ---> Tools_Box
+    Tools_Box --->  Model{Model Response}
+    
+    subgraph Tools_Box ["Tool Calling Foundation"]
+        direction LR
+        T1[Transcribe] --- T2[Review] --- T3[Read Files] --- T4[Update] --- T5[Clear]
+    end
+
+    style Model fill:#f9f,stroke:#333,stroke-width:2px
+    style Tools_Box fill:#f0f4f8,stroke:#007acc,stroke-dasharray: 5 5
+```
 
 ## ✨ Key Features
 
