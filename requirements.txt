@@ -1,0 +1,11 @@
+langchain
+langchain-core
+langchain-community
+langchain-anthropic
+langchain-openai
+langgraph
+python-dotenv
+rich
+oemer
+music21
+pygame

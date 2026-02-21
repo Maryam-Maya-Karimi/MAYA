@@ -1,0 +1,17 @@
+# API Keys and Secrets
+.env
+
+# Python junk
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Maya specific artifacts
+*.mp3
+*.mid
+*.musicxml
+rendered_*.png
+
+# 5. OS Junk
+.DS_Store
+Thumbs.db
