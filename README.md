@@ -30,7 +30,7 @@ graph TD
 * **Tiered Transcription:** 1.  **Tier 1 (Precision):** Uses `oemer` for specialized Optical Music Recognition.
     2.  **Tier 2 (Vision LLM):** Falls back to Claude’s vision capabilities if OMR fails or encounters environment errors.
 * **Agentic Self-Correction:** If a file path is mistyped, Maya automatically lists the workspace files to find the correct match and retries the operation.
-* **Visual & Audio Feedback:** Automatically renders a visual representation and generates an MP3/MIDI playback for instant review using `fluidsynth`.
+* **Visual & Audio Feedback:** Automatically renders a visual sheet and generates MIDI/MP3 playback via fluidsynth for immediate review. If audio hardware is unavailable, the system invokes a failsafe to export and store the media files locally; a similar redundancy ensures visual assets are preserved even if display output fails.
 * **Human-in-the-loop:** Easily update or correct specific notes via natural language.
 
 ## 🛠️ Tech Stack
